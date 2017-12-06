@@ -6,8 +6,8 @@ result = cell();
 result{1} = cell();
 
 for i = 1:length(indices)
-    membrane_potential = data.Trial_MembranePotential{i};
-    AP_rates(i) = AP_firing_rates(membrane_potential,-30);
+    membrane_potential = data.Trial_MembranePotential{indices(i)};
+    AP_rates(i) = AP_firing_rates(membrane_potential, -30);
     result{1}{i} = data.Mouse_Name{indices(i)};
 end
 
