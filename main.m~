@@ -1,0 +1,15 @@
+% load('data.mat');
+
+indices = getIdx(data);
+AP_rates = zeros(size(indices));
+AP_rate_results = {};
+AP_rate_results{1} = {};
+
+for i = 1:length(indices)
+    membrane_potential = data.Trial_MembranePotential{indices(i)};
+    AP_rates(i) = AP_firing_rates(membrane_potential,-10);
+    AP_rate_results{1}{i} = data.Mouse_Name{indices(i)};
+    compute_AP_threshold(membrane_potential, threshold, diff_threshold, rise_time)
+end
+
+AP_rate_results{2} = AP_rates';
