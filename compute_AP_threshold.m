@@ -9,7 +9,7 @@ function AP_threshold = compute_AP_threshold(membrane_potential, threshold, diff
     for i=1:length(peak_times)
         idx = start_times(start_times>(peak_times(i)-rise_time) & start_times<peak_times(i));
         if isempty(idx)
-            disp("Membrane potential not found");
+            disp('Membrane potential not found');
         else
             final_results = [final_results; idx(1) membrane_potential(idx(1))];
             AP_threshold = AP_threshold + membrane_potential(idx(1));
