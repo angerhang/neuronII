@@ -23,3 +23,16 @@ AP_results{2} = AP_rates';
 AP_results{3} = AP_thresholds';
 AP_results{4} = AP_amplitudes';
 AP_results{5} = AP_widths';
+
+amps_to_show = zeros(5,4);
+widths_to_show = zeros(5,4);
+
+amps_to_show(:,1) = [AP_amplitudes(2);AP_amplitudes(1);AP_amplitudes(3:5)];
+amps_to_show(:,2) = [AP_amplitudes(6:9);AP_amplitudes(20)];
+amps_to_show(:,3) = [AP_amplitudes(15:19)];
+amps_to_show(:,) = [AP_amplitudes(10:14)];
+
+widths_to_show(:,1) = [AP_widths(2);AP_widths(1);AP_widths(3:5)];
+widths_to_show(:,2) = [AP_widths(6:9);AP_widths(20)];
+widths_to_show(:,3) = [AP_widths(15:19)];
+widths_to_show(:,4) = [AP_widths(10:14)];

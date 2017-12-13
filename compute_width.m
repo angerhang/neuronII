@@ -11,8 +11,8 @@ function [amplitude, width] = compute_width(membrane_potential, threshold, diff_
             disp("Membrane potential not found");
         else
             amplitude = membrane_potential(peak_times(i))-membrane_potential(idx(1));
-            half_time_1 = find(membrane_potential(idx(1):peak_times(i)) > membrane_potential(idx(1)) + amplitude/2,1,'first');
-            half_time_2 = find(membrane_potential(peak_times(i):min(length(membrane_potential),peak_times(i)+100*rise_time)) < membrane_potential(idx(1)) + amplitude/2,1,'first');
+            half_time_1 = idx(1) + find(membrane_potential(idx(1):peak_times(i)) > membrane_potential(idx(1)) + amplitude/2,1,'first');
+            half_time_2 = peak_times(i) + find(membrane_potential(peak_times(i):min(length(membrane_potential),peak_times(i)+100*rise_time)) < membrane_potential(idx(1)) + amplitude/2,1,'first');
             width = half_time_2 - half_time_1;
             final_results = [final_results; idx(1) amplitude width];
             counter = counter + 1;
