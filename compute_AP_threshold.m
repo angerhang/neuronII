@@ -17,8 +17,8 @@ function AP_threshold = compute_AP_threshold(membrane_potential, threshold, diff
         end
     end
     AP_threshold = AP_threshold/counter;
-    figure()
-    hold on;
-    plot(membrane_potential,'k')
-    scatter(final_results(:,1),final_results(:,2),'ro'); 
+%     figure()
+%     hold on;
+%     plot(membrane_potential,'k')
+%     scatter(final_results(:,1),final_results(:,2),'ro'); 
 end

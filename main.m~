@@ -43,12 +43,12 @@ widths_to_show(:,2) = [AP_widths(6:9);AP_widths(20)];
 widths_to_show(:,3) = [AP_widths(15:19)];
 widths_to_show(:,4) = [AP_widths(10:14)];
 
-means_to_show(:,1) = [Vm_mean(2);Vm_mean(1);Vm_mean(3:5)];
-means_to_show(:,2) = [Vm_mean(6:9);Vm_mean(20)];
-means_to_show(:,3) = [Vm_mean(15:19)];
-means_to_show(:,4) = [Vm_mean(10:14)];
+means_to_show(:,1) = [AP_widths(2);AP_widths(1);AP_widths(3:5)];
+widths_to_show(:,2) = [AP_widths(6:9);AP_widths(20)];
+widths_to_show(:,3) = [AP_widths(15:19)];
+widths_to_show(:,4) = [AP_widths(10:14)];
 
-sds_to_show(:,1) = [Vm_sd(2);Vm_sd(1);Vm_sd(3:5)];
-sds_to_show(:,2) = [Vm_sd(6:9);Vm_sd(20)];
-sds_to_show(:,3) = [Vm_sd(15:19)];
-sds_to_show(:,4) = [Vm_sd(10:14)];
+widths_to_show(:,1) = [AP_widths(2);AP_widths(1);AP_widths(3:5)];
+widths_to_show(:,2) = [AP_widths(6:9);AP_widths(20)];
+widths_to_show(:,3) = [AP_widths(15:19)];
+widths_to_show(:,4) = [AP_widths(10:14)];
