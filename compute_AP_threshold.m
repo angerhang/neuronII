@@ -1,8 +1,9 @@
-function AP_threshold = compute_AP_threshold(membrane_potential, threshold, diff_threshold, rise_time)
+function [AP_threshold, AP_thresholds] = compute_AP_threshold(membrane_potential, threshold, diff_threshold, rise_time)
     [~,peak_times] = findpeaks(membrane_potential,'MinPeakHeight', threshold);
     derivative = 40*diff(membrane_potential);
     start_times = find(derivative>diff_threshold);
     AP_threshold = 0;
+    AP_thresholds = [];
     counter = 0;
     rise_time = rise_time*40;
     final_results = [];
@@ -13,6 +14,7 @@ function AP_threshold = compute_AP_threshold(membrane_potential, threshold, diff
         else
             final_results = [final_results; idx(1) membrane_potential(idx(1))];
             AP_threshold = AP_threshold + membrane_potential(idx(1));
+            AP_thresholds = [AP_thresholds; AP_threshold];
             counter = counter + 1;
         end
     end
