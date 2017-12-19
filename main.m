@@ -15,7 +15,6 @@ diff_threshold = 10;
 rise_time = 0.5;
 
 for i = 1:length(indices)
-    i
     membrane_potential = data.Trial_MembranePotential{indices(i)};
     AP_rates(i) = AP_firing_rates(membrane_potential,threshold);
     AP_results{1}{i} = data.Mouse_Name{indices(i)};
@@ -36,6 +35,7 @@ amps_to_show = zeros(5,4);
 widths_to_show = zeros(5,4);
 means_to_show = zeros(5,4);
 sds_to_show = zeros(5,4);
+repo_ps_to_show = zeros(5,4);
 
 amps_to_show(:,1) = [AP_amplitudes(2);AP_amplitudes(1);AP_amplitudes(3:5)];
 amps_to_show(:,2) = [AP_amplitudes(6:9);AP_amplitudes(20)];
@@ -56,3 +56,8 @@ sds_to_show(:,1) = [Vm_sd(2);Vm_sd(1);Vm_sd(3:5)];
 sds_to_show(:,2) = [Vm_sd(6:9);Vm_sd(20)];
 sds_to_show(:,3) = [Vm_sd(15:19)];
 sds_to_show(:,4) = [Vm_sd(10:14)];
+
+repo_ps_to_show(:,1) = [AP_repo_p(2);Vm_sd(1);AP_repo_p(3:5)];
+repo_ps_to_show(:,2) = [AP_repo_p(6:9);AP_repo_p(20)];
+repo_ps_to_show(:,3) = [AP_repo_p(15:19)];
+repo_ps_to_show(:,4) = [AP_repo_p(10:14)];

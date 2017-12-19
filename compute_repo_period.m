@@ -9,10 +9,9 @@ function [repo_p] = compute_repo_period(membrane_potential, threshold, diff_thre
     for i=1:length(peak_times)
         idx = start_times(start_times>(peak_times(i)-rise_time) & start_times<peak_times(i));
         if isempty(idx)
-            disp('Membrane potential not found');
+            disp('Peak finding functions not tuned correctly');
         else
             amplitude = membrane_potential(peak_times(i))-membrane_potential(idx(1));
-            new_repo_p = find(membrane_potential(peak_times(i):min(length(membrane_potential),peak_times(i)+100*rise_time)) < AP_threshold, 1, 'first');
             new_repo_p = find(membrane_potential(peak_times(i):min(length(membrane_potential),peak_times(i)+100*rise_time)) < AP_threshold, 1, 'first');
             repo_p = [repo_p; new_repo_p];
             counter = counter + 1;
